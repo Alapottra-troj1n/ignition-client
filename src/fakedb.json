@@ -1,0 +1,50 @@
+[
+    {
+      "image": "https://i.ibb.co/6rJQYYG/61r-Wu-UHirz-L-AC-SL1500.jpg",
+      "name": "Spec Ops Framing Hammer",
+      "des": "Meet the ultimate jobsite wingman. Purposefully engineered for elite builders, contractors, and tradesmen, the Spec Ops 22 oz. Framing Hammer delivers failsafe performance and power on every mission. With an aerodynamic, high-carbon steel head that’s 25% lighter and a ballistically balanced design, this hammer provides sniper-controlled swings at maximum velocity, and brute, unadulterated striking power that puts old-school, heavy hammers to shame.",
+      "price": 75,
+      "available-quantity": 10500,
+      "minimum-order-quantity": 500
+    },
+    {
+      "image": "https://i.ibb.co/NZ7TYnZ/51j-A6-YSPgm-L-AC-SL1000.jpg",
+      "name": "BOSCH Drill/Driver",
+      "des": "This BOSCH drill/driver combines next-gen user control with a compact, powerful cordless tool. The GSR18V-535CN 18V EC Brushless connected-ready compact tough 1/2 in. Drill/driver features Bluetooth® connectivity, (which connects with an optional connectivity tool module), linking the free BOSCH toolbox app on a mobile phone for enhanced tool control and detailed feedback.",
+      "price": 45,
+      "available-quantity": 5500,
+      "minimum-order-quantity": 500
+    },
+    {
+      "image": "https://i.ibb.co/HrpN6xz/61-ZAx-W3-Yyd-S-AC-SL1000.jpg",
+      "name": "DECKER Jig Saw",
+      "des": "Precision cutting gets a high-power boost with the BLACK+DECKER Smart Select 5.0 Amp Electric Jig Saw. New Curve Control technology lets you adjust the saw’s orbit in one of four customized settings for your specific projects while the variable-speed motor generates up to 3,000 SPM (strokes per minute) of cutting power.",
+      "price": 150,
+      "available-quantity": 2000,
+      "minimum-order-quantity": 100
+    },
+    {
+      "image": "https://i.ibb.co/7yrzhpy/71-N2-Vh-KDN8-L-AC-SL1500.jpg",
+      "name": "Multi-Bit Screwdriver",
+      "des": "Klein Tools Multi-Bit Screwdrivers help make your job a little easier. The 15-in-1 Ratcheting Screwdrivers durable ratcheting mechanism allows for faster and easier all-day driving. With the on-board storage of 14 common bits and a 1/4-Inch nut driver, this is your new everyday screwdriver.",
+      "price": 100,
+      "available-quantity": 3500,
+      "minimum-order-quantity": 500
+    },
+    {
+      "image": "https://i.ibb.co/41gkGkP/81bc-EU8x-H7-L-AC-SL1500.jpg",
+      "name": "LMGR Hack Saw",
+      "des": "Cutting through branches, PVC pipe, lumber, and some metals is Swift with the Milwaukee 2625-20 compact reciprocating saw. This cordless power tool is designed to be used with one hand, given you ease of movement throughout the jobsite. Cutting overhead is a breeze with the lightweight design, and a plethora of useful features, like the trigger lock and LED lighting system, keeps your cuts on the straight and narrow when accuracy is needed.",
+      "price": 245,
+      "available-quantity": 6500,
+      "minimum-order-quantity": 500
+    },
+    {
+      "image": "https://i.ibb.co/fnJ0ZdL/81-13ywv-KWL-AC-SL1500.jpg",
+      "name": "Nailer Kit Nailgun",
+      "des": "The 20V MAX 18-Gauge Brad Nailer Kit is battery-powered, eliminating the need for a compressor, hose, or costly gas cartridges. The special motor design provides consistent firing power into various materials and climate conditions. This nailer features multiple tool-free settings to provide increased productivity and user safety.",
+      "price": 75,
+      "available-quantity": 10500,
+      "minimum-order-quantity": 500
+    }  
+  ]
