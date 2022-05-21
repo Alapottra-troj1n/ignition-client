@@ -18,9 +18,9 @@ const Products = () => {
 
 
     return (
-        <div className="my-24">
+        <div className="my-24 container mx-auto">
             <h2 className="text-4xl text-center font-bold mb-16">OUR HARDWARE <span className="text-primary">PRODUCTS</span></h2>
-            <div className="grid grid-cols-3 gap-10 container mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 ">
                 {products.map(product => <Product product={product}></Product>)}
             </div>
         </div>
