@@ -8,6 +8,8 @@ import Navbar from './components/Navbar/Navbar';
 import PurchasePage from './components/PurchasePage/PurchasePage';
 import RequireAuth from './components/RequireAuth/RequireAuth';
 import SignUp from './components/SignUp/SignUp';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
         <Route path='/purchase/:id' element={<RequireAuth><PurchasePage /></RequireAuth> } ></Route>
       </Routes>
       <Footer/>
+      <ToastContainer />
     </div>
   );
 }
