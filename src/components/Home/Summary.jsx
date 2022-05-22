@@ -6,7 +6,7 @@ const Summary = () => {
         <div className='my-20 container mx-auto'>
             <div className='my-10'>
                 <h2 className="text-center  font-bold text-4xl"> <span className="text-primary">TRUSTED BY </span>THOUSANDS OF BUSINESSES</h2>
-                <p className='text-center text-lg text-slate-500'>Serving You Since 1991</p>
+                <p className='text-center text-lg text-slate-500'>Our Business Summary</p>
             </div>
 
             <div className='flex justify-center mb-5'>
