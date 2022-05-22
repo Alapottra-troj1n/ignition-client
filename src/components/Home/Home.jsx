@@ -8,7 +8,7 @@ import Unique from './Unique';
 
 const Home = () => {
     return (
-        <div>
+        <div className="overflow-hidden">
             <Banner/>
             <Products/>
             <Summary/>

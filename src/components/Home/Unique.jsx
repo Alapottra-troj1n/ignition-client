@@ -5,7 +5,7 @@ const Unique = () => {
     return (
         <div>
             <div>
-                <h2 className='text-center font-bold text-4xl'>WHAT'S ON<span className="text-primary"> YOUR MIND ?</span></h2>
+                <h2 className='text-center font-bold text-3xl lg:text-4xl'>WHAT'S ON<span className="text-primary"> YOUR MIND ?</span></h2>
                 <div>
                 <div className='container mx-auto '>
             <div className='grid grid-cols-1 lg:grid-cols-2 grid-flow-row-dense'>
