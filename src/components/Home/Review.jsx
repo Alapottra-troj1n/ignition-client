@@ -19,7 +19,7 @@ const Review = ({ review }) => {
                     <div class="rating">
                         {
                             
-                            [...Array(rating).keys()].map(number => <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />)
+                            [...Array(rating).keys()].map(number => <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" defaultChecked />)
                         }
                         
                     </div>

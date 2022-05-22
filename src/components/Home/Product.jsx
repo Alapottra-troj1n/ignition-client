@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Product = ({product}) => {
     const des = product.des.slice(0,50)
@@ -19,7 +20,7 @@ const Product = ({product}) => {
                     </div>
                     
                 </div>
-                <button className="btn btn-primary text-white">Order Now</button>
+                <Link to={`purchase/${product._id}`} className="btn btn-primary text-white">Order Now</Link>
             </div>
         </div>
     );
