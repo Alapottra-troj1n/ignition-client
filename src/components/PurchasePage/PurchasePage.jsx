@@ -98,40 +98,40 @@ const PurchasePage = () => {
                     <h2 className="text-center text-2xl font-bold text-primary">Order Details</h2>
                     <form onSubmit={handleOrder} className="flex flex-col gap-2 justify-center items-center">
 
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text font-semibold">Email</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text font-semibold">Email</span>
                             </label>
                             <input type="text" name='email' value={user?.email} disabled className="input input-bordered w-80" />
                         </div>
                         
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text font-semibold">Username</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text font-semibold">Username</span>
                             </label>
                             <input type="text" name='username' value={user?.displayName} disabled className="input input-bordered w-80" />
                         </div>
 
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text font-semibold">Address</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text font-semibold">Address</span>
                             </label>
                             <input type="text" name='address' required  className="input input-bordered w-80" />
                         </div>
 
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text font-semibold">Phone Number</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text font-semibold">Phone Number</span>
                             </label>
                             <input type="text" name='phone' required  className="input input-bordered w-80" />
                         </div>
 
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text font-semibold">Quantity (min : {product?.minimumOrderQuantity}) (max : {product?.availableQuantity})</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text font-semibold">Quantity (min : {product?.minimumOrderQuantity}) (max : {product?.availableQuantity})</span>
                             </label>
                             <input type="number" name='quantity' value={orderQuantity} disabled  className="input input-bordered w-80" />
-                            <div class="flex gap-2 mt-2">
+                            <div className="flex gap-2 mt-2">
                                 <button onClick={handleQuantityPlus} disabled={orderQuantity === product?.availableQuantity ? true : ''} className="btn btn-primary btn-xs">+</button>
                                 <button onClick={handleQuantityMinus} disabled={orderQuantity === product?.minimumOrderQuantity || orderQuantity < product?.minimumOrderQuantity  ? true : ''} className="btn btn-primary btn-xs">-</button>
                             </div>

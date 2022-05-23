@@ -6,20 +6,20 @@ const Review = ({ review }) => {
 
     return (
 
-        <div class="card bg-slate-100 text-slate-600">
-            <div class="card-body items-center text-center">
-                <div class="avatar">
-                    <div class="w-24 rounded-full">
+        <div className="card bg-slate-100 text-slate-600">
+            <div className="card-body items-center text-center">
+                <div className="avatar">
+                    <div className="w-24 rounded-full">
                         <img src={review.image} alt='profile' />
                     </div>
                 </div>
-                <h2 class="card-title">{review.name}</h2>
+                <h2 className="card-title">{review.name}</h2>
                 <p>{review.review}</p>
-                <div class="card-actions justify-center">
-                    <div class="rating">
+                <div className="card-actions justify-center">
+                    <div className="rating">
                         {
                             
-                            [...Array(rating).keys()].map(number => <input key={uuidv4()} type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" defaultChecked />)
+                            [...Array(rating).keys()].map(number => <input key={uuidv4()} type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" defaultChecked />)
                         }
                         
                     </div>

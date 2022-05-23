@@ -2,6 +2,7 @@ import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import ConfirmDelete from './ConfirmDelete';
 import OrderCard from './OrderCard';
 
 const MyOrders = () => {
@@ -37,14 +38,17 @@ const MyOrders = () => {
 
 
 
-    },[])
+    },[myOrders, user.email])
 
+    const [cancelledOrder, setCancelledOrder] = useState(null)
 
     return (
         <div>
+            {cancelledOrder && <ConfirmDelete setCancelledOrder={setCancelledOrder} order={cancelledOrder} />}
+
             <h2 className='text-center font-bold lg:text-2xl'>My Orders : {myOrders.length}</h2>
             <div className="flex justify-center flex-col gap-5 my-5">
-            {myOrders.map(order => <OrderCard order={order} />)}
+            {myOrders.map(order => <OrderCard setCancelledOrder={setCancelledOrder} key={order._id} order={order} />)}
             </div>
         </div>
     );

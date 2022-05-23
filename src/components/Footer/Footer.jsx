@@ -27,7 +27,7 @@ const Footer = () => {
                 </div>
             </footer>
 
-            <footer className="footer items-center p-10 text-neutral-content container mx-auto">
+            <footer className="footer items-center p-10 text-slate-600 container mx-auto">
                 <div className="items-center grid-flow-col">
                     <Link to="/" className="btn btn-ghost normal-case text-2xl font-bold"><span className="text-primary">Igni</span>tion</Link>
                     <p>Copyright © 2022 - All right reserved</p>

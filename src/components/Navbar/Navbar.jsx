@@ -18,7 +18,7 @@ const Navbar = () => {
             {user && <li><Link  to="/dashboard">Dashboard</Link></li>}
             <li><Link  to="#products">Products</Link></li>
             <li><Link  to="#reviews">Reviews</Link></li>
-            {user ?<button class="btn btn-primary text-white" onClick={handleSignOut}>Logout</button> :  <li><Link  to="/login">Login</Link></li>}
+            {user ?<button className="btn btn-primary text-white" onClick={handleSignOut}>Logout</button> :  <li><Link  to="/login">Login</Link></li>}
    
         </>
 
