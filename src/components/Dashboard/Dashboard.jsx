@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { FaBoxOpen,FaSlack,FaUserAlt } from "react-icons/fa";
+import ConfirmDelete from './ConfirmDelete';
 
 const Dashboard = () => {
     return (
         <div className="container mx-auto h-[70vh]">
-            <div className="grid grid-cols-1 lg:grid-cols-2 mt-20">
-
+            
+            <div className="grid grid-cols-1 lg:grid-cols-[30%,70%] mt-20">
+              
                 <div>
                     <ul class="menu bg-base-100 w-56 p-2 rounded-box">
                         <li>

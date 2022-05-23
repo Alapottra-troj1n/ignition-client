@@ -1,9 +1,11 @@
 import React from 'react';
 import {FaTrashAlt} from "react-icons/fa";
+import ConfirmDelete from './ConfirmDelete';
 
 const OrderCard = ({order}) => {
     return (
         <div>
+         <ConfirmDelete order={order} />
         <div className="flex items-center border-2 rounded-md p-4 justify-between">
 
             <div className="flex items-center justify-between ">
@@ -21,9 +23,9 @@ const OrderCard = ({order}) => {
                 <h2 className="font-normal text-xs lg:text-sm w-24 md:w-48 ">{order.address}</h2>
             </div>
 
-            <div className="ml-2 flex flex-col lg:flex-row">
-                <button className="mx-3 mb-2 lg:mb-0"><FaTrashAlt className="lg:text-lg text-red-500 hover:text-red-600"/></button>
-                <button className="btn btn-sm bg-slate-600 text-white">Pay</button>
+            <div className="ml-2 flex items-center gap-3 flex-col lg:flex-row">
+           <label for="order-delete-confirm" class=" font-bold cursor-pointer mr-3 modal-button"><FaTrashAlt/></label>
+            <button className="btn btn-sm bg-slate-600 text-white">Pay</button>
             </div>
 
 

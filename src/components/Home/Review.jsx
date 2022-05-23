@@ -6,7 +6,7 @@ const Review = ({ review }) => {
 
     return (
 
-        <div class="card bg-slate-100 text-neutral-content">
+        <div class="card bg-slate-100 text-slate-600">
             <div class="card-body items-center text-center">
                 <div class="avatar">
                     <div class="w-24 rounded-full">

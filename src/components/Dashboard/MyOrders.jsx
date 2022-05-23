@@ -42,7 +42,7 @@ const MyOrders = () => {
 
     return (
         <div>
-            <h2 className='text-center font-bold text-2xl'>My Orders : {myOrders.length}</h2>
+            <h2 className='text-center font-bold lg:text-2xl'>My Orders : {myOrders.length}</h2>
             <div className="flex justify-center flex-col gap-5 my-5">
             {myOrders.map(order => <OrderCard order={order} />)}
             </div>
