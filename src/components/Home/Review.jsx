@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { v4 as uuidv4 } from 'uuid';
 const Review = ({ review }) => {
     const rating = review.rating;
 
@@ -19,7 +19,7 @@ const Review = ({ review }) => {
                     <div class="rating">
                         {
                             
-                            [...Array(rating).keys()].map(number => <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" defaultChecked />)
+                            [...Array(rating).keys()].map(number => <input key={uuidv4()} type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" defaultChecked />)
                         }
                         
                     </div>

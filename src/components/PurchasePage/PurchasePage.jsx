@@ -138,7 +138,7 @@ const PurchasePage = () => {
                         </div>
 
                         
-                        <input type="submit" value="Place The Order"  className='btn btn-primary text-white' />
+                        <input type="submit" disabled={product?.maximumOrderQuantity === 0 ? true : ''} value="Place The Order"  className='btn btn-primary text-white' />
 
                     </form>
                 </div>
