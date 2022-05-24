@@ -9,10 +9,13 @@ import { toast } from 'react-toastify';
 const PurchasePage = () => {
     const productId = useParams();
     const [user, loading, error] = useAuthState(auth);
+   
 
     const { data: product, isLoading, refetch } = useQuery('product', () => fetch(`http://localhost:5000/product/${productId.id}`, {
     })
     .then(res => res.json()));
+
+    const [totalPrice, setTotalPrice] = useState(product?.price * product?.minimumOrderQuantity);
 
 
     const [orderQuantity, setOrderQuantity] = useState(product?.minimumOrderQuantity);
@@ -34,6 +37,7 @@ const PurchasePage = () => {
         
 
         setOrderQuantity(updatedQuantity);
+        setTotalPrice(updatedQuantity * product?.price);
 
     }
 
@@ -44,7 +48,8 @@ const PurchasePage = () => {
 
         const updatedQuantity = orderQuantity - initialQuantity;
 
-        setOrderQuantity(updatedQuantity)
+        setOrderQuantity(updatedQuantity);
+        setTotalPrice(updatedQuantity * product?.price);
     }
 
 
@@ -56,8 +61,10 @@ const PurchasePage = () => {
             username : e.target.username.value,
             address : e.target.address.value,
             phone: e.target.phone.value,
-            quantity: e.target.quantity.value
+            quantity: e.target.quantity.value,
+            totalPrice
         }
+
         const placeOrder = async()=>{
            
 
@@ -90,7 +97,7 @@ const PurchasePage = () => {
             <div>
                 <h2 className="text-center text-4xl font-bold">{product.name}</h2>
             </div>
-            <div className='grid grid-cols-1 lg:grid-cols-2 my-20 items-center'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 mb-10 items-center'>
                 <div className='flex justify-center'>
                 <img src={product.image} alt="" className="max-w-xs lg:max-w-md" />
                 </div>
@@ -125,6 +132,7 @@ const PurchasePage = () => {
                             </label>
                             <input type="text" name='phone' required  className="input input-bordered w-80" />
                         </div>
+                      
 
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
@@ -135,6 +143,11 @@ const PurchasePage = () => {
                                 <button onClick={handleQuantityPlus} disabled={orderQuantity === product?.availableQuantity ? true : ''} className="btn btn-primary btn-xs">+</button>
                                 <button onClick={handleQuantityMinus} disabled={orderQuantity === product?.minimumOrderQuantity || orderQuantity < product?.minimumOrderQuantity  ? true : ''} className="btn btn-primary btn-xs">-</button>
                             </div>
+                        </div>
+
+                        <div className="form-control w-full max-w-xs my-5">
+                            <small className="font-semibold text-slate-500" >Price per unit : {product?.price} $</small>
+                           <h2 className="text-2xl font-bold">Total Price : {totalPrice || product?.price * product?.minimumOrderQuantity} $ </h2>
                         </div>
 
                         

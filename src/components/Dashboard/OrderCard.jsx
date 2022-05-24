@@ -8,6 +8,8 @@ const OrderCard = ({order, setCancelledOrder}) => {
         setCancelledOrder(order);
     }
 
+  
+
 
 
     return (
@@ -26,8 +28,8 @@ const OrderCard = ({order, setCancelledOrder}) => {
                 <h2 className="font-normal text-xs lg:text-sm w-24 md:w-48 ">Quantity: {order.quantity}</h2>
             </div>
 
-            <div className=" sm:flex justify-end md:justify-center hidden">
-                <h2 className="font-normal text-xs lg:text-sm w-24 md:w-48 ">{order.address}</h2>
+            <div className=" sm:flex justify-end md:justify-center">
+                <h2 className="font-normal text-xs lg:text-sm w-24 md:w-48 ">Total Price: {order?.totalPrice} $</h2>
             </div>
 
             <div className="ml-2 flex items-center gap-3 flex-col lg:flex-row">

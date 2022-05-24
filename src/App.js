@@ -13,8 +13,21 @@ import { ToastContainer } from 'react-toastify';
 import MyOrders from './components/Dashboard/MyOrders';
 import MyProfile from './components/Dashboard/MyProfile';
 import MyReviews from './components/Dashboard/MyReviews';
+import UpdateProfile from './components/Dashboard/UpdateProfile';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from './firebase.init';
+import useUser from './hooks/useUser';
+import ManageAllOrders from './components/Dashboard/Admin/ManageAllOrders';
+import AddAProduct from './components/Dashboard/Admin/AddAProduct';
+import MakeAdmin from './components/Dashboard/Admin/MakeAdmin';
+import ManageProducts from './components/Dashboard/Admin/ManageProducts';
+import RequireAdmin from './components/RequireAdmin/RequireAdmin';
 
 function App() {
+  const [user, loading, error] = useAuthState(auth);
+  const [fetchedUser] = useUser(user)
+  const isAdmin = fetchedUser?.isAdmin;
+
   return (
     <div className="App">
       <Navbar/>
@@ -23,11 +36,24 @@ function App() {
         <Route path='/login' element={<Login />} ></Route>
         <Route path='/signup' element={<SignUp />} ></Route>
         <Route path='/dashboard' element={<RequireAuth><Dashboard /></RequireAuth> } >
-          <Route index element={<MyOrders />}></Route>
+         (isAdmin ?  <Route index element={<ManageAllOrders/>}></Route> :  <Route index element={<MyOrders />}></Route>)
+        
           <Route path='addreview' element={<MyReviews />}></Route>
+
           <Route path='myprofile' element={<MyProfile />}></Route>
+
+          {/* other admin routes */}
+          <Route path='addaproduct' element={<RequireAdmin><AddAProduct /></RequireAdmin> }></Route>
+          <Route path='makeadmin' element={<RequireAdmin><MakeAdmin /></RequireAdmin>}></Route>
+          <Route path='manageproducts' element={<RequireAdmin><ManageProducts /></RequireAdmin>}></Route>
+          
+
+
+
+
         </Route>
         <Route path='/purchase/:id' element={<RequireAuth><PurchasePage /></RequireAuth> } ></Route>
+        <Route path='/updateprofile' element={<RequireAuth><UpdateProfile /></RequireAuth> } ></Route>
       </Routes>
       <Footer/>
       <ToastContainer />
