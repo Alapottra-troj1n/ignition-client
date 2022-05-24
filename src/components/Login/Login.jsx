@@ -59,7 +59,7 @@ const Login = () => {
  
 
     return (
-        <div className="h-screen flex justify-center items-center lg:gap-16 flex-wrap">
+        <div className="lg:h-screen flex justify-center items-center lg:gap-16 flex-wrap">
             <div className="mx-5">
                 <img src='https://i.ibb.co/mChTWZY/Login-amico-1.png' className="max-w-sm lg:max-w-lg" alt="" />
             </div>

@@ -14,7 +14,7 @@ const Dashboard = () => {
 
 
     return (
-        <div className="container mx-auto h-screen">
+        <div className="container mx-auto mb-40">
 
             <div className="grid grid-cols-1 lg:grid-cols-[30%,70%] mt-14">
 

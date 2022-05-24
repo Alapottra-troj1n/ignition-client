@@ -3,6 +3,7 @@ import {FaTrashAlt} from "react-icons/fa";
 
 
 const OrderCard = ({order, setCancelledOrder}) => {
+    
 
     const handleSetCancel = () => {
         setCancelledOrder(order);

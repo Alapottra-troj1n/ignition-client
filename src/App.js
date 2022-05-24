@@ -36,7 +36,7 @@ function App() {
         <Route path='/login' element={<Login />} ></Route>
         <Route path='/signup' element={<SignUp />} ></Route>
         <Route path='/dashboard' element={<RequireAuth><Dashboard /></RequireAuth> } >
-         (isAdmin ?  <Route index element={<ManageAllOrders/>}></Route> :  <Route index element={<MyOrders />}></Route>)
+         {isAdmin ?  <Route index element={<ManageAllOrders/>}></Route> :  <Route index element={<MyOrders />}></Route>}
         
           <Route path='addreview' element={<MyReviews />}></Route>
 

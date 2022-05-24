@@ -1,11 +1,13 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import auth from '../firebase.init';
 
 const useUser = (user) => {
 
     const [fetchedUser, setFetchedUser] = useState(null)
     const [fetchedLoading, setFetchedLoading] = useState(true);
+    const navigate = useNavigate();
 
     useEffect(() => {
 
@@ -24,7 +26,7 @@ const useUser = (user) => {
 
                 const response = await fetch(`http://localhost:5000/getuser?email=${user.email}`,settings);
                 if(response.status === 401 || response.status === 403){
-                    signOut(auth)
+                    navigate('/')
                 }
                 const data = await response.json();
                 setFetchedLoading(false);
