@@ -24,6 +24,7 @@ import ManageProducts from './components/Dashboard/Admin/ManageProducts';
 import RequireAdmin from './components/RequireAdmin/RequireAdmin';
 import Blog from './components/Blog/Blog';
 import Portfolio from './components/Portfolio/Portfolio';
+import Payment from './components/Dashboard/Payment';
 
 function App() {
   const [user, loading, error] = useAuthState(auth);
@@ -58,6 +59,7 @@ function App() {
         <Route path='/updateprofile' element={<RequireAuth><UpdateProfile /></RequireAuth> } ></Route>
         <Route path='/blog' element={<Blog/>}></Route>
         <Route path='/portfolio' element={<Portfolio/>}></Route>
+        <Route path='/payment/:id' element={<Payment/>}></Route>
       </Routes>
       <Footer/>
       <ToastContainer />

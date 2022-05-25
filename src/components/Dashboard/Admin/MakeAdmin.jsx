@@ -74,8 +74,8 @@ const MakeAdmin = () => {
         <div>
             <h2 className="text-3xl text-center my-10 font-bold">Make a Admin</h2>
 
-            <div class="overflow-x-auto">
-                <table class="table table-compact table-zebra w-full">
+            <div className="overflow-x-auto">
+                <table className="table table-compact table-zebra w-full">
                   
                     <thead>
                         <tr>

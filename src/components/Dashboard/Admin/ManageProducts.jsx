@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import CancelProduct from './CancelProduct';
 
 const ManageProducts = () => {
     const [user, loading, error] = useAuthState(auth);
     const [allProducts, setAllProducts] = useState([]);
     const navigate = useNavigate();
+    const [deletedProduct, setDeletedProduct] = useState(null);
 
     useEffect(() => {
 
@@ -44,7 +46,19 @@ const ManageProducts = () => {
 
 
 
-    }, [])
+    }, [deletedProduct])
+
+
+    const handleProductDelete = (product) => {
+
+        setDeletedProduct(product);
+
+
+
+
+
+
+    }   
 
 
 
@@ -53,11 +67,12 @@ const ManageProducts = () => {
 
     return (
         <div>
+            {deletedProduct && <CancelProduct product={deletedProduct} setDeletedProduct={setDeletedProduct}  /> }
             <h2 className="text-3xl text-center font-bold">Manage Products : {allProducts?.length}</h2>
 
             <div>
-                <div class="overflow-x-auto">
-                    <table class="table  table-compact table-auto table-zebra w-full">
+                <div className="overflow-x-auto">
+                    <table className="table  table-compact table-auto table-zebra w-full">
                        
                         <thead>
                             <tr>
@@ -69,10 +84,10 @@ const ManageProducts = () => {
                         </thead>
                         <tbody>
                             {allProducts.map((product,index) => 
-                                   <tr>
+                                   <tr key={product._id}>
                                    <th>{index + 1}</th>
                                    <td>{product?.name}</td>
-                                   <td><button class="btn bg-slate-600 text-white">Delete</button></td>
+                                   <td><label htmlFor="cancel-product-modal" onClick={()=> handleProductDelete(product) } className="btn modal-btn bg-slate-600 text-white">Delete</label></td>
                                  
                                </tr>)}
                        
