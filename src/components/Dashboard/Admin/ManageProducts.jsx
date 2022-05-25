@@ -24,7 +24,7 @@ const ManageProducts = () => {
 
             }
             if (user.email) {
-                const response = await fetch(`http://localhost:5000/allproducts?email=${user?.email}`, settings);
+                const response = await fetch(` https://tranquil-temple-93556.herokuapp.com/allproducts?email=${user?.email}`, settings);
                 if (response.status === 401 || response.status === 403) {
                     navigate('/')
                 }

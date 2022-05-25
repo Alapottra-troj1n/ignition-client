@@ -33,7 +33,7 @@ const UpdateProfile = () => {
                     body: JSON.stringify(updatedUser)
                 }
 
-                const response = await fetch(`http://localhost:5000/updateprofile?email=${user.email}`,settings);
+                const response = await fetch(` https://tranquil-temple-93556.herokuapp.com/updateprofile?email=${user.email}`,settings);
                 const data = await response.json();
                 if(data.modifiedCount){
                     toast.success('Profile Updated Successfully');

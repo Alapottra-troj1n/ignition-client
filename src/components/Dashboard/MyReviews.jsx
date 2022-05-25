@@ -26,7 +26,7 @@ const MyReviews = () => {
                 body: JSON.stringify(review)
             }
 
-              const response = await fetch(`http://localhost:5000/addreview`,settings)
+              const response = await fetch(` https://tranquil-temple-93556.herokuapp.com/addreview`,settings)
               const data = await response.json();
               if(data.insertedId){
                   toast.success('Added Review Sucessfully00')

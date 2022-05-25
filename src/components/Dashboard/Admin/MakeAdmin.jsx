@@ -24,7 +24,7 @@ const MakeAdmin = () => {
 
 
             if (user?.email) {
-                const response = await fetch(`http://localhost:5000/allusers?email=${user.email}`, settings)
+                const response = await fetch(` https://tranquil-temple-93556.herokuapp.com/allusers?email=${user.email}`, settings)
                 if (response.status === 401 || response.status === 403) {
                     navigate('/')
                 }
@@ -56,7 +56,7 @@ const MakeAdmin = () => {
                 body: JSON.stringify({adminEmail : user.email})
             }
 
-            const response = await fetch(`http://localhost:5000/makeadmin?email=${nonadminuser.email}`, settings);
+            const response = await fetch(` https://tranquil-temple-93556.herokuapp.com/makeadmin?email=${nonadminuser.email}`, settings);
             const data = await response.json();
             if(data.modifiedCount){
                 toast.success(`admin added successfully`)

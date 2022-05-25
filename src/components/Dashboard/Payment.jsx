@@ -23,7 +23,7 @@ const Payment = () => {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
                 },
             }
-            const response = await fetch(`http://localhost:5000/order/payment/${id}`, settings);
+            const response = await fetch(` https://tranquil-temple-93556.herokuapp.com/order/payment/${id}`, settings);
             const data = await response.json();
             console.log(data);
             setOrder(data);

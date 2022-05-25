@@ -15,7 +15,7 @@ const ConfirmDelete = ({order,setCancelledOrder}) => {
 
 
 
-            const res = await fetch(`http://localhost:5000/order/${order._id}`,settings);
+            const res = await fetch(` https://tranquil-temple-93556.herokuapp.com/order/${order._id}`,settings);
             const data = await res.json();
             if(data.deletedCount){
                     toast.success('Sucessfully cancelled the order');

@@ -7,7 +7,7 @@ const Products = () => {
 
     useEffect(() => {
         const getProducts = async () => {
-            const result = await fetch(`http://localhost:5000/products`)
+            const result = await fetch(` https://tranquil-temple-93556.herokuapp.com/products`)
             const data = await result.json();
             setProducts(data);
         }

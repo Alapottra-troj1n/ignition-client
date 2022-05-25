@@ -27,7 +27,7 @@ const CheckoutForm = ({order}) => {
                 body: JSON.stringify({price : totalPrice}),
             }
 
-            const response = await fetch(`http://localhost:5000/create-payment-intent`,settings);
+            const response = await fetch(` https://tranquil-temple-93556.herokuapp.com/create-payment-intent`,settings);
             const data = await response.json();
            
             if(data?.clientSecret){
@@ -97,7 +97,7 @@ const CheckoutForm = ({order}) => {
                         transactionId : paymentIntent.id
                     }
 
-                    fetch(`http://localhost:5000/order/${order._id}`,{
+                    fetch(` https://tranquil-temple-93556.herokuapp.com/order/${order._id}`,{
 
 
 

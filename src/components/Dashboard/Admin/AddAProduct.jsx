@@ -33,7 +33,7 @@ const AddAProduct = () => {
                     body: JSON.stringify(product)
                 }
 
-                const response = await fetch(`http://localhost:5000/addproduct?email=${user.email}`,settings)
+                const response = await fetch(` https://tranquil-temple-93556.herokuapp.com/addproduct?email=${user.email}`,settings)
                 if(response.status === 401 || response.status === 403){
                     signOut(auth)
                 }
