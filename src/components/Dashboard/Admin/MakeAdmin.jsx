@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 
 const MakeAdmin = () => {
@@ -28,7 +29,6 @@ const MakeAdmin = () => {
                     navigate('/')
                 }
                 const data = await response.json();
-                console.log(data);
                 setAllUsers(data);
 
             }
@@ -40,7 +40,33 @@ const MakeAdmin = () => {
         fetchAllUsers();
 
 
-    }, [])
+    }, []);
+
+    const handleMakeAdmin = (nonadminuser) => {
+       
+
+        const makeAdmin = async () => {
+
+            const settings = {
+                method:'PUT',
+                headers: {
+                    'content-type': 'application/json',
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                },
+                body: JSON.stringify({adminEmail : user.email})
+            }
+
+            const response = await fetch(`http://localhost:5000/makeadmin?email=${nonadminuser.email}`, settings);
+            const data = await response.json();
+            if(data.modifiedCount){
+                toast.success(`admin added successfully`)
+            }
+
+
+        }
+        makeAdmin();
+
+    }
 
 
 
@@ -61,13 +87,13 @@ const MakeAdmin = () => {
                     </thead>
                     <tbody>
                      
-                     {allUsers.map((user,index) => 
+                     {allUsers.map((nonadminuser,index) => 
                             
-                            <tr>
+                            <tr key={nonadminuser._id} >
                                <th>{index + 1}</th>
-                               <td>{user.username}</td>
-                               <td className='hidden lg:table-cell'>{user.email}</td>
-                               <td> <button className='btn btn-sm bg-slate-600 text-white' >Make Admin</button> </td>
+                               <td>{nonadminuser.username}</td>
+                               <td className='hidden lg:table-cell'>{nonadminuser.email}</td>
+                               <td> <button onClick={()=> handleMakeAdmin(nonadminuser) } className='btn btn-sm bg-slate-600 text-white' >Make Admin</button> </td>
                            </tr>
                      )}
                        
