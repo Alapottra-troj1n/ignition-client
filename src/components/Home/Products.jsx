@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Product from './Product';
+import Loading from '../Loading/Loading'
 
 const Products = () => {
 
@@ -13,6 +14,10 @@ const Products = () => {
         }
         getProducts(products);
     }, [])
+
+    if(!products.length){
+        return <Loading/>
+    }
 
 
 
