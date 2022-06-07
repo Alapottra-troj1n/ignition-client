@@ -57,8 +57,6 @@ function App() {
         </Route>
         <Route path='/purchase/:id' element={<RequireAuth><PurchasePage /></RequireAuth> } ></Route>
         <Route path='/updateprofile' element={<RequireAuth><UpdateProfile /></RequireAuth> } ></Route>
-        <Route path='/blog' element={<Blog/>}></Route>
-        <Route path='/portfolio' element={<Portfolio/>}></Route>
         <Route path='/payment/:id' element={<Payment/>}></Route>
       </Routes>
       <Footer/>
