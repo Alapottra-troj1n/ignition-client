@@ -20,9 +20,34 @@ const Dashboard = () => {
 
                 <div>
                     <ul className="menu bg-base-100 w-56 p-2 rounded-box">
-                        {isAdmin ?
-                            // admin routes
+                        {!isAdmin ?
+                            // not admin routes
+                            
                             <>
+
+                                <li>
+                                    <Link to=''>
+                                        <FaBoxOpen className="text-2xl" />
+                                        My Orders
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to='/dashboard/addreview'>
+                                        <FaSlack className="text-2xl" />
+                                        Add a Review
+                                    </Link>
+                                </li>
+
+
+                            </>
+                          
+
+                            :
+
+                            // admin routes
+
+                            <>
+                            
                             <li>
                                 <Link to=''>
                                     
@@ -56,29 +81,6 @@ const Dashboard = () => {
                             </li>
 
                             </>
-
-                            :
-
-                            // not a admin routes
-
-                            <>
-
-                                <li>
-                                    <Link to=''>
-                                        <FaBoxOpen className="text-2xl" />
-                                        My Orders
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to='/dashboard/addreview'>
-                                        <FaSlack className="text-2xl" />
-                                        Add a Review
-                                    </Link>
-                                </li>
-
-
-                            </>
-
 
                         }
                         <li>
