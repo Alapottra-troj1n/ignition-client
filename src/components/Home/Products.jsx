@@ -8,7 +8,7 @@ const Products = () => {
 
     useEffect(() => {
         const getProducts = async () => {
-            const result = await fetch(` https://tranquil-temple-93556.herokuapp.com/products`)
+            const result = await fetch(` https://ignition-backend.onrender.com/products`)
             const data = await result.json();
             setProducts(data);
         }

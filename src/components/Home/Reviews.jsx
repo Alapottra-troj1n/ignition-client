@@ -6,7 +6,7 @@ const Reviews = () => {
 
     useEffect(()=>{
         const getReviews = async() =>{
-            const response = await fetch(` https://tranquil-temple-93556.herokuapp.com/reviews`)
+            const response = await fetch(` https://ignition-backend.onrender.com/reviews`)
             const data = await response.json();
             setReviews(data);
         }

@@ -10,7 +10,7 @@ const useToken = user =>{
         const username = user?.user?.displayName;
         const currentUser = {email: email, username: username};
         if(email){
-            fetch(` https://tranquil-temple-93556.herokuapp.com/user/${email}`, {
+            fetch(` https://ignition-backend.onrender.com/user/${email}`, {
                 method:'PUT',
                 headers: {
                     'content-type': 'application/json'

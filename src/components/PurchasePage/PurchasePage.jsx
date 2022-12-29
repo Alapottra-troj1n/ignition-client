@@ -11,7 +11,7 @@ const PurchasePage = () => {
     const [user, loading, error] = useAuthState(auth);
    
 
-    const { data: product, isLoading, refetch } = useQuery('product', () => fetch(` https://tranquil-temple-93556.herokuapp.com/product/${productId.id}`, {
+    const { data: product, isLoading, refetch } = useQuery('product', () => fetch(` https://ignition-backend.onrender.com/product/${productId.id}`, {
     })
     .then(res => res.json()));
 
@@ -77,7 +77,7 @@ const PurchasePage = () => {
                 body: JSON.stringify(order)
             };
 
-            const res = await fetch(` https://tranquil-temple-93556.herokuapp.com/addorder`, settings);
+            const res = await fetch(` https://ignition-backend.onrender.com/addorder`, settings);
             const data = await res.json();
             if(data.insertedId){
                     toast.success('Your Order Has Been Booked. Please Check My Orders Page');
